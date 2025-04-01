@@ -7,16 +7,14 @@ With this program, you can do the following:
 ------------------------------------
 """
 import list_of_states as st
-#import os
-#import time
+import os
+import time
 all_50_states = st.us_states
 
 #used to display all US 50 States
 def display_us_states():
   print("\n-----------------\n  50 US STATES \n-----------------\n")
-
-  States = all_50_state
-
+  states = all_50_states
   for i in range(0,len(states)):
     if i<9:
       print('{}-\t{}'.format("0"+str(i+1),states[i]))
@@ -24,19 +22,18 @@ def display_us_states():
       print("-----------------")
       print('{}-\t{}'.format(i+1,states[i]))
     else:
-      print('{}-\t{}'.format(i+1,stateS[i]))
-
+      print('{}-\t{}'.format(i+1,states[i]))
 
 #Used to search and show a list of states start with the same letter
 def states_alpha_search(first_letter):
-  first_letter = [first_letter.upper()]
+  first_letter = first_letter.upper()
   state_names = []
   num_of_states = 0
   states = all_50_states
 
   for state in states:
     if state[0] ==first_letter:
-      num_of_states += 1
+      num_of_states +=1
       state_names.append(state)
 
   if num_of_states ==0:
@@ -87,13 +84,13 @@ def user_selection():
   if user_input ==1:
     display_us_states()
   elif user_input == 2:
-    letter = input(" Enter a Letter(A-Z): ")
-    states_alpha_search(letter)
+    first_letter = input(" Enter a Letter(A-Z): ")
+    states_alpha_search(first_letter)
   elif user_input == 3:
     state = input("Enter a State Name: ")
     us_state_test(state)
-  elif user_Input == 4:
-    in_use =True
+  elif user_input == 4:
+    in_use = False
     print("Thank you and goodbye!")
   else:
     print("This is not an option.")
